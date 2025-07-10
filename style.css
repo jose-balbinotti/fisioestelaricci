@@ -61,19 +61,19 @@ body {
 }
 
 /* Compensar a altura do menu no layout */
-.hero,
+.inicio,
 .sobre,
 .tratamentos {
     padding-top: 80px;
 }
 
-/* Hero Section */
-.hero {
+/* Início Section */
+.inicio {
     background: linear-gradient(to right, var(--azul-principal), var(--detalhe-turquesa));
     padding: 60px 20px;
 }
 
-.hero-conteudo {
+.inicio-conteudo {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -83,13 +83,13 @@ body {
     gap: 40px;
 }
 
-.hero-texto {
+.inicio-texto {
     flex: 1;
     min-width: 280px;
     text-align: center;
 }
 
-.hero-texto h1 {
+.inicio-texto h1 {
     font-size: 2em;
     margin-bottom: 20px;
     color: white;
@@ -104,13 +104,13 @@ body {
     font-weight: bold;
 }
 
-/* Hero image */
-.hero-imagem {
+/* Início image */
+.inicio-imagem {
     flex: 1;
     min-width: 280px;
 }
 
-.hero-imagem img {
+.inicio-imagem img {
     width: 100%;
     max-height: 400px;
     object-fit: cover;
