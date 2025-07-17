@@ -8,12 +8,10 @@
 
 /* Cores personalizadas */
 :root {
-    --azul-principal: #4169E1;
-    --detalhe-turquesa: #00CED1;
-    --fundo-claro: #F0FFFF;
-    --fundo-suave: #FFEFD5;
-    --fundo-alternado: #F5DEB3;
-    --texto-escuro: #333;
+    --primary: #4169E1;
+    --secondary: #00CED1;
+    --light-background: #F0FFFF;
+    --dark-text: #161616;
 }
 
 html {
@@ -22,8 +20,7 @@ html {
 
 /* Global */
 body {
-    background-color: var(--fundo-claro);
-    color: var(--texto-escuro);
+    color: var(--dark-text);
     line-height: 1.6;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -37,7 +34,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: var(--azul-principal);
+    background-color: var(--primary);
     z-index: 1000;
     padding: 10px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -61,26 +58,25 @@ body {
 }
 
 .menu a:hover {
-    color: var(--detalhe-turquesa);
+    color: var(--secondary);
 }
 
 /* Compensar a altura do menu no layout */
 .inicio,
 .sobre,
-.tratamentos {
+.cards {
     padding-top: 80px;
 }
 
 /* Leve arredondamento */
 .sobre,
-.tratamentos {
+.cards {
     border-radius: 20px;
-    margin: 40px 20px;
 }
 
 /* Hover com sombra leve (botões e links) */
 .btn-agendar:hover,
-.tratamento-card a:hover,
+.info-card a:hover,
 .menu a:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     transform: translateY(-2px);
@@ -88,7 +84,7 @@ body {
 
 /* Início Section */
 .inicio {
-    background: linear-gradient(to right, var(--azul-principal), var(--detalhe-turquesa));
+    background: linear-gradient(to right, var(--primary), var(--secondary));
     padding: 60px 20px;
 }
 
@@ -115,7 +111,7 @@ h1 {
 
 .btn-agendar {
     background-color: white;
-    color: var(--azul-principal);
+    color: var(--primary);
     padding: 12px 25px;
     text-decoration: none;
     border-radius: 5px;
@@ -139,12 +135,12 @@ h1 {
 /* Sobre Mim */
 .sobre {
     padding: 60px 20px;
-    background-color: var(--fundo-claro);
+    background-color: var(--light-background);
     text-align: center;
 }
 
 .sobre h2 {
-    color: var(--azul-principal);
+    color: var(--primary);
     margin-bottom: 20px;
 }
 
@@ -176,26 +172,32 @@ h1 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Tratamentos */
-.tratamentos {
+/* Contato */
+.contato {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    height: 100px;
+    text-align: center;
+    align-content: center;
+}
+
+/* Cards */
+.cards {
     padding: 60px 20px;
     background-color: #fff;
     text-align: center;
 }
 
-.tratamentos h2 {
-    color: var(--azul-principal);
+.cards h2 {
+    color: var(--primary);
     margin-bottom: 40px;
 }
 
-.tratamento-card {
-    /* display: flex;
-    flex-direction: column; */
+.info-card {
     display: inline-block;
     width: 300px;
     height: 300px;
     margin: 15px;
-    background-color: var(--fundo-claro);
+    background-color: var(--light-background);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -203,36 +205,35 @@ h1 {
     text-align: center;
 }
 
-.tratamento-card img {
+.info-card img {
     width: 100%;
     height: 120px;
     object-fit: cover;
 }
 
-.tratamento-card h3 {
+.info-card h3 {
     margin: 10px 10px 5px;
-    color: var(--azul-principal);
+    color: var(--primary);
     font-size: 1.1em;
 }
 
-.tratamento-card p {
+.info-card p {
     margin: 0 10px;
     font-size: 0.95em;
-    color: var(--texto-escuro);
+    color: var(--dark-text);
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
-    /* ou 3 se preferir */
     -webkit-box-orient: vertical;
     min-height: 50px;
 }
 
-.tratamento-card a {
+.info-card a {
     display: inline-block;
     margin: 10px auto 15px;
     padding: 8px 16px;
-    background-color: var(--azul-principal);
+    background-color: var(--primary);
     color: white;
     border-radius: 5px;
     text-decoration: none;
@@ -241,7 +242,7 @@ h1 {
 
 /* Bordas */
 img,
-.tratamento-card,
+.info-card,
 .hero-imagem img,
 .sobre-imagem img,
 input,
@@ -261,4 +262,12 @@ button {
 [data-animar].ativo {
     opacity: 1;
     transform: translateY(0);
+}
+
+.icon-flutuante {
+    border-radius: 20px;
+    float: right;
+    bottom: 10px;
+    right: 10px;
+    position: fixed;
 }
